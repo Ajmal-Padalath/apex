@@ -1,0 +1,141 @@
+.wishlist-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.wishlist-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.wishlist-drawer {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 100%;
+  max-width: 450px;
+  height: 100vh;
+  z-index: 1100;
+  border-radius: 0;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-secondary);
+}
+
+.wishlist-drawer.open {
+  right: 0;
+}
+
+.wishlist-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.wishlist-count {
+  color: var(--accent-orange);
+}
+
+.wishlist-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.empty-wishlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.empty-wishlist h3 {
+  color: white;
+  margin: 1rem 0 0.5rem;
+}
+
+.empty-wishlist p {
+  margin-bottom: 2rem;
+}
+
+.wishlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wishlist-item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.wishlist-item-image {
+  width: 90px;
+  height: 110px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-primary);
+}
+
+.wishlist-item-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-item-details h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.item-price {
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.add-to-cart-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.remove-btn {
+  color: var(--text-secondary);
+  padding: 0.25rem;
+}
+
+.remove-btn:hover {
+  color: #ff3b30;
+}

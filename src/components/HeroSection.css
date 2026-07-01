@@ -1,0 +1,144 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Offset for navbar */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    var(--bg-primary) 0%, 
+    rgba(13, 14, 18, 0.8) 40%, 
+    rgba(13, 14, 18, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.6;
+  transform: scale(1.05);
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-text-block {
+  max-width: 600px;
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-subtitle {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-stats {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  gap: 3rem;
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+  align-self: flex-start;
+}
+
+.stat-item h4 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--glass-border);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-self: stretch;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .stat-divider {
+    width: 100%;
+    height: 1px;
+  }
+}
